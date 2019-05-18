@@ -100,10 +100,10 @@ Note: if the permissioning commands is not given, application can be accessed by
 
 ------------------------------------------------------------------------------------------
 
-14. Now go to the browser and go to http://localhost:3000
-15. Now you can access the application using the corresponding departments private key
-16. To terminate the app execution, go to the terminal window (where docker-compose is running) and give CTRL+C
-17. Wait for docker-compose to gracefully shutdown. Then: give the command
+12. Now go to the browser and go to http://localhost:3000
+13. Now you can access the application using the corresponding departments private key
+14. To terminate the app execution, go to the terminal window (where docker-compose is running) and give CTRL+C
+15. Wait for docker-compose to gracefully shutdown. Then: give the command
     (-) sudo docker-compose down
 
 
