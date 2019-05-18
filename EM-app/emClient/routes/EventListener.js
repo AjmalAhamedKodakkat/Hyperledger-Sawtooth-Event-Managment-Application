@@ -1,5 +1,5 @@
 /* Creates custom event subscription to application specific events */
-/* event alerts when a word matching the model of vehicle is submitted */
+/* event alerts when a word matching the location of event */
 //  REGEX_ALL and REGEX_ANY  means in REGEX_ALL all the attributes to the same key in custom event definition should satisfy the given condition in "matchString"
 // In REGEX_ANY any one attribute satisfies the "matchString" , the event will be triggered  
 const {
@@ -79,7 +79,7 @@ function EventSubscribe(stream) {
                 const blockCommitSubscription = EventSubscription.create({ eventType: 'sawtooth/block-commit' })
                 /**
                  * @dev First Custom Event  
-                 * subscription of Vehicle/WordMatch event done below , 
+                 * subscription of Event/WordMatch event done below , 
                  * here the custom event is defined in T.P
                  */
                 const wordMatchSubscription = EventSubscription.create({
@@ -92,7 +92,7 @@ function EventSubscribe(stream) {
 
                 })
                 /**
-                 * @dev subscription request of blockcommitSubscription,wordMatchSubscription,wordMatchSubscription1 is done below 
+                 * @dev subscription request of blockcommitSubscription,wordMatchSubscription is done below 
                  */
                 const subscription_request = ClientEventsSubscribeRequest.encode({ subscriptions: [blockCommitSubscription, wordMatchSubscription] }).finish();
                 stream.send(Message.MessageType.CLIENT_EVENTS_SUBSCRIBE_REQUEST, subscription_request)
